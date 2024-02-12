@@ -19,8 +19,8 @@ namespace Othertask
 
             string userInput;
             int setColor;
-            int RedColor =  1;
-            int GreenColor = 2;
+            int redColor =  1;
+            int greenColor = 2;
             string setPassword;
             string setName;
             string currentPassword = "123456";
@@ -38,23 +38,20 @@ namespace Othertask
                     case CommandSetName:
                         Console.Write("Установите имя:");
                         setName = Console.ReadLine();
-                        Console.Clear();
                         break;
 
                     case CommandChangeColor:
                         Console.WriteLine("Вы собираетесь поменять цвет консоли.\n Выберете цвет");
-                        Console.Write($" Красный - {RedColor}\n Зеленный - {GreenColor}\n ");
+                        Console.Write($" Красный - {redColor}\n Зеленный - {greenColor}\n ");
                         setColor = Convert.ToInt32(Console.ReadLine());
 
-                        if (setColor == RedColor)
+                        if (setColor == redColor)
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.Clear();
                         }                        
-                        else if (setColor == GreenColor)
+                        else if (setColor == greenColor)
                         {
                             Console.ForegroundColor = ConsoleColor.Green;
-                            Console.Clear();
 
                         }
                         break;
@@ -62,7 +59,6 @@ namespace Othertask
                     case CommandSetPassword:
                         Console.Write("Установите пароль:");
                         setPassword = Console.ReadLine();
-                        Console.Clear();
                         break;
 
                     case CommandDisplayName:
@@ -72,7 +68,6 @@ namespace Othertask
 
                         if (setPassword == currentPassword)
                         {
-
                             Console.WriteLine("Введите ваше имя:");
                             setName = Console.ReadLine();
                             Console.WriteLine("Имя пользователя: " + setName);
@@ -88,6 +83,7 @@ namespace Othertask
                         isActive = false;
                         break;
                 }
+                Console.Clear();
             }
         }
     }
